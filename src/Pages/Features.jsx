@@ -26,7 +26,9 @@ const Features = () => {
           <h2 className="text-6xl text-magenta">
             <FaHtml5 />
           </h2>
-          <h1 className="text-slate-300 text-2xl lg:text-4xl font-medium">Web Design</h1>
+          <h1 className="text-slate-300 text-2xl lg:text-4xl font-medium">
+            Web Design
+          </h1>
           <p className="text-slate-400">
             I throw myself down among the tall grass by the stream as I lie
             close to the earth.

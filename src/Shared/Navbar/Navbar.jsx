@@ -10,6 +10,7 @@ import "./style.css";
 import Hamburger from "hamburger-react";
 import { useContext } from "react";
 import { StateContext } from "../../Components/Context";
+import logo from "../../assets/logo2.png";
 
 const Navbar = () => {
   const { isOpen, setIsOpen } = useContext(StateContext);
@@ -58,13 +59,9 @@ const Navbar = () => {
       <h2 className="text-slate-100 text-4xl flex justify-end lg:hidden">
         <Hamburger toggled={isOpen} toggle={() => setIsOpen(false)} />
       </h2>
-      <div className="flex justify-center mt-16">
+      <div className="mt-16 flex justify-center">
         <Link to="/">
-          <img
-            className=" w-48 h-48 rounded-full border-slate-700 border-8 cursor-pointer"
-            src="https://i.ibb.co/ZBWt45G/rony.jpg"
-            alt=""
-          />
+          <img className=" w-56 cursor-pointer" src={logo} alt="" />
         </Link>
       </div>
       <div className="py-10 mt-8 mx-5 flex flex-col">
