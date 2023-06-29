@@ -5,10 +5,10 @@ const Contact = () => {
         <h4 className="text-magenta uppercase text-xl">CONTACT</h4>
         <h2 className="text-slate-100 text-6xl font-bold">Contact With Me</h2>
       </div>
-      <div className="mx-28 grid grid-cols-8 gap-8 items-center py-10">
+      <div className="mx-10 lg:mx-28 grid lg:grid-cols-8 gap-8 items-center py-10">
         <div className="col-span-3"></div>
         <div className="col-span-5 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
-          <div className="w-full grid grid-cols-2 gap-4 mb-6">
+          <div className="w-full grid lg:grid-cols-2 gap-4 mb-6">
             <div className="flex flex-col gap-2">
               <label
                 className="uppercase text-slate-500 font-normal text-sm"

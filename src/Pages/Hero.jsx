@@ -20,21 +20,21 @@ const Hero = () => {
             </Link>
           </div>
           <div className="mt-8 space-y-2 ">
-            <h1 className="text-6xl font-bold text-slate-100">Muhammad Hamim</h1>
+            <h1 className="text-4xl lg:text-6xl font-bold text-slate-100">Muhammad Hamim</h1>
 
-            <h2 className="text-4xl font-semibold">
+            <h2 className="text-2xl lg:text-4xl font-semibold">
               <span className="text-slate-300">I am a </span>
               <span className="text-magenta">
                 <TypeAnimation
                   sequence={[
                     "Web Developer",
-                    1000,
+                    2000,
                     "Tech Enthusiastic",
-                    1000,
+                    2000,
                     "Student",
-                    1200,
+                    2000,
                   ]}
-                  speed={50}
+                  speed={70}
                   repeat={Infinity}
                 />
               </span>
