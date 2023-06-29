@@ -12,7 +12,7 @@ const Main = () => {
         className={`fixed top-0 left-0 z-50 w-[65%] md:w-[35%] lg:w-[15%] ${
           isOpen
             ? "translate-x-0 origin-right duration-500"
-            : "-translate-x-full lg:translate-x-0 origin-right duration-500"
+            : "-translate-x-[101%] lg:translate-x-0 origin-right duration-500"
         }`}>
         <Navbar />
       </div>
