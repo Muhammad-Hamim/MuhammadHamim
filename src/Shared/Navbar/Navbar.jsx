@@ -7,8 +7,13 @@ import { Link } from "react-router-dom";
 // import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Link as ScrollLink } from "react-scroll";
 import "./style.css";
+import Hamburger from "hamburger-react";
+import { useContext } from "react";
+import { StateContext } from "../../Components/Context";
 
 const Navbar = () => {
+  const { isOpen, setIsOpen } = useContext(StateContext);
+
   const navItem = [
     {
       name: "Home",
@@ -50,6 +55,9 @@ const Navbar = () => {
 
   return (
     <div className="w-full overflow-y-scroll navbar-scrollbar px-3 py-5 h-screen bg-background">
+      <h2 className="text-slate-100 text-4xl flex justify-end lg:hidden">
+        <Hamburger toggled={isOpen} toggle={() => setIsOpen(false)} />
+      </h2>
       <div className="flex justify-center mt-16">
         <Link to="/">
           <img
