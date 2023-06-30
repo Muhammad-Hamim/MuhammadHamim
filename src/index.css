@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.skill-icon{
+.skill-icon {
   transition: all 0.5s;
 }
-.skill-div:hover .skill-icon{
-    transform: scale(1.1);
-    color: #ff014f;
+.skill-div:hover .skill-icon {
+  transform: scale(1.1);
+  color: #ff014f;
 }
