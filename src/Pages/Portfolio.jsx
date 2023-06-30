@@ -45,19 +45,21 @@ const Portfolio = () => {
         <h2 className="text-slate-100 text-6xl font-bold">My Portfolio</h2>
       </div>
       <div className="mt-10 mx-10 lg:mx-28">
-        {projects.map((project) => (
-          <div
-            key={project.name}
-            className="grid lg:grid-cols-2 gap-10 items-center mb-10">
+        {projects.map((project, index) => (
+          <div key={project.name} className="grid grid-cols-2">
             <div
-              className="w-full h-[50vh] bg-top hover:bg-bottom cursor-pointer"
+              className={`w-full h-[50vh] bg-top hover:bg-bottom cursor-pointer ${
+                index % 2 === 0 ? "col-start-1" : "col-start-2"
+              }`}
               style={{
                 backgroundImage: `url(${project.photo})`,
                 backgroundSize: "cover",
                 transition: "ease-in-out 4s",
-              }}
-            />
-            <div className="bg-background hover:shadow-sm hover:shadow-magenta duration-500 h-fit shadow-sm shadow-slate-500 text-slate-300 p-5">
+              }}></div>
+            <div
+              className={`bg-background hover:shadow-sm hover:shadow-magenta duration-500 h-fit shadow-sm shadow-slate-500 text-slate-300 p-5 ${
+                index % 2 === 0 ? "col-start-1" : "col-start-2"
+              }`}>
               <div>
                 <h2 className="text-3xl font-semibold">{project.name}</h2>
                 <p className="italic text-slate-500">{project.category}</p>

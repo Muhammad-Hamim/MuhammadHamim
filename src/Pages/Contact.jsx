@@ -70,7 +70,7 @@ const Contact = () => {
               className="w-full outline-none px-4 py-3 text-slate-300 focus:outline-2 focus:outline-magenta bg-neutral-900 shadow-sm shadow-slate-500 rounded-sm resize-none h-48"></textarea>
           </div>
           <div>
-            <button className="text-center w-full bg-neutral-900 hover:bg-magenta duration-200 hover:text-slate-300 rounded-sm font-semibold text-magenta uppercase py-4">
+            <button className="text-center shadow-sm hover:shadow-magenta shadow-slate-500 w-full bg-neutral-900 duration-200 rounded-sm font-semibold text-magenta uppercase py-4">
               send message
             </button>
           </div>
