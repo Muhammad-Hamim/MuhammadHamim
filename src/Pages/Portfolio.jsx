@@ -1,5 +1,6 @@
 import toyland from "../assets/toylandTreasures.jpeg";
 import dishDiary from "../assets/DishDiary.jpeg";
+import { GiCheckMark } from "react-icons/gi";
 
 const Portfolio = () => {
   const projects = [
@@ -42,22 +43,66 @@ const Portfolio = () => {
         </h4>
         <h2 className="text-slate-100 text-6xl font-bold">My Portfolio</h2>
       </div>
-      <div className="mt-10 mx-10 lg:mx-28 grid lg:grid-cols-2 items-center gap-10">
+      <div className="mt-10 mx-10 lg:mx-28">
         {projects.map((project) => {
           return (
-            <div key={project.name}>
+            <div
+              key={project.name}
+              className="grid lg:grid-cols-2 gap-10 items-center mb-10">
               <div
                 className="w-full h-[50vh] bg-top hover:bg-bottom cursor-pointer"
                 style={{
                   backgroundImage: `url(${project.photo})`,
                   backgroundSize: "cover",
-                  transition: "ease-in-out 3s",
+                  transition: "ease-in-out 4s",
                 }}></div>
-
-              <div className="bg-background relative shadow-sm shadow-slate-500 text-slate-300 p-5">
-                <h2 className="text-3xl font-semibold">{project.name}</h2>
-                <p>{project.category}</p>
-                <p></p>
+              <div className="bg-background hover:shadow-sm hover:shadow-magenta duration-500 h-fit shadow-sm shadow-slate-500 text-slate-300 p-5">
+                <div className="">
+                  <div>
+                    <h2 className="text-3xl font-semibold">{project.name}</h2>
+                    <p className="italic text-slate-500">{project.category}</p>
+                  </div>
+                  <div className="flex items-center flex-wrap my-4 gap-4">
+                    <a
+                      href={project.liveLink}
+                      className="hover:bg-magenta  duration-300  px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
+                      Live link
+                    </a>
+                    <a
+                      href={project.clientCode}
+                      className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
+                      Client code
+                    </a>
+                    <a
+                      href={project.serverCode}
+                      className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
+                      Server code
+                    </a>
+                  </div>
+                </div>
+                <div className="my-4">
+                  {project.features.map((feature) => {
+                    return (
+                      <p className="flex items-center gap-3 mb-2" key={feature}>
+                        <span className="text-magenta bg-magenta bg-opacity-20 p-2 rounded-full">
+                          <GiCheckMark />
+                        </span>
+                        <span>{feature}</span>
+                      </p>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center flex-wrap gap-4">
+                  {project.technology.map((item) => {
+                    return (
+                      <p
+                        key={item}
+                        className="bg-magenta bg-opacity-50 px-4 rounded-full text-slate-300 cursor-pointer">
+                        {item}
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           );
