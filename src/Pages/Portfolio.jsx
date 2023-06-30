@@ -30,83 +30,83 @@ const Portfolio = () => {
         "Interactive Guides: Step-by-step cooking instructions and tips",
       ],
       liveLink: "https://the-dish-diary-auth-3421e.web.app/",
-      clientCode: "https://github.com/Muhammad-Hamim/toyland-Treasures-client",
-      serverCode: "https://github.com/Muhammad-Hamim/toyland-treasures-server",
+      clientCode: "https://github.com/Muhammad-Hamim/the-dish-diary-client",
+      serverCode: "https://github.com/Muhammad-Hamim/the-dish-diary-server",
       technology: ["React js", "JavaScript", "TailwindCSS"],
     },
   ];
+
   return (
     <div id="portfolio" className="py-28">
       <div className="text-center py-8">
         <h4 className="text-magenta uppercase text-xl">
-          VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK
+          VISIT MY PORTFOLIO AND PROVIDE YOUR FEEDBACK
         </h4>
         <h2 className="text-slate-100 text-6xl font-bold">My Portfolio</h2>
       </div>
       <div className="mt-10 mx-10 lg:mx-28">
-        {projects.map((project) => {
-          return (
+        {projects.map((project) => (
+          <div
+            key={project.name}
+            className="grid lg:grid-cols-2 gap-10 items-center mb-10">
             <div
-              key={project.name}
-              className="grid lg:grid-cols-2 gap-10 items-center mb-10">
-              <div
-                className="w-full h-[50vh] bg-top hover:bg-bottom cursor-pointer"
-                style={{
-                  backgroundImage: `url(${project.photo})`,
-                  backgroundSize: "cover",
-                  transition: "ease-in-out 4s",
-                }}></div>
-              <div className="bg-background hover:shadow-sm hover:shadow-magenta duration-500 h-fit shadow-sm shadow-slate-500 text-slate-300 p-5">
-                <div className="">
-                  <div>
-                    <h2 className="text-3xl font-semibold">{project.name}</h2>
-                    <p className="italic text-slate-500">{project.category}</p>
-                  </div>
-                  <div className="flex items-center flex-wrap my-4 gap-4">
-                    <a
-                      href={project.liveLink}
-                      className="hover:bg-magenta  duration-300  px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
-                      Live link
-                    </a>
-                    <a
-                      href={project.clientCode}
-                      className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
-                      Client code
-                    </a>
-                    <a
-                      href={project.serverCode}
-                      className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
-                      Server code
-                    </a>
-                  </div>
-                </div>
-                <div className="my-4">
-                  {project.features.map((feature) => {
-                    return (
-                      <p className="flex items-center gap-3 mb-2" key={feature}>
-                        <span className="text-magenta bg-magenta bg-opacity-20 p-2 rounded-full">
-                          <GiCheckMark />
-                        </span>
-                        <span>{feature}</span>
-                      </p>
-                    );
-                  })}
-                </div>
-                <div className="flex items-center flex-wrap gap-4">
-                  {project.technology.map((item) => {
-                    return (
-                      <p
-                        key={item}
-                        className="bg-magenta bg-opacity-50 px-4 rounded-full text-slate-300 cursor-pointer">
-                        {item}
-                      </p>
-                    );
-                  })}
-                </div>
+              className="w-full h-[50vh] bg-top hover:bg-bottom cursor-pointer"
+              style={{
+                backgroundImage: `url(${project.photo})`,
+                backgroundSize: "cover",
+                transition: "ease-in-out 4s",
+              }}
+            />
+            <div className="bg-background hover:shadow-sm hover:shadow-magenta duration-500 h-fit shadow-sm shadow-slate-500 text-slate-300 p-5">
+              <div>
+                <h2 className="text-3xl font-semibold">{project.name}</h2>
+                <p className="italic text-slate-500">{project.category}</p>
+              </div>
+              <div className="flex items-center flex-wrap my-4 gap-4">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:bg-magenta duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
+                  Live link
+                </a>
+                <a
+                  href={project.clientCode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
+                  Client code
+                </a>
+                <a
+                  href={project.serverCode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
+                  Server code
+                </a>
+              </div>
+              <div className="my-4">
+                {project.features.map((feature) => (
+                  <p className="flex items-center gap-3 mb-2" key={feature}>
+                    <span className="text-magenta bg-magenta bg-opacity-20 p-2 rounded-full">
+                      <GiCheckMark />
+                    </span>
+                    <span>{feature}</span>
+                  </p>
+                ))}
+              </div>
+              <div className="flex items-center flex-wrap gap-4">
+                {project.technology.map((item) => (
+                  <p
+                    key={item}
+                    className="bg-magenta bg-opacity-50 px-4 rounded-full text-slate-300 cursor-pointer">
+                    {item}
+                  </p>
+                ))}
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

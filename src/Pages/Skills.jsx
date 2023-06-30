@@ -28,7 +28,7 @@ const Skills = () => {
           return (
             <div
               key={item.name}
-              className="shadow-sm shadow-slate-400 p-6 cursor-pointer rounded-md skill-div">
+              className="shadow-sm shadow-slate-400 hover:shadow-sm hover:shadow-magenta duration-500 p-6 cursor-pointer rounded-md skill-div">
               <h2 className="flex items-center gap-6 text-4xl text-slate-300">
                 <span className="skill-icon">{item.icon}</span>
                 <span>{item.name}</span>

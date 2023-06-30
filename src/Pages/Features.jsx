@@ -10,7 +10,7 @@ const Features = () => {
         <h2 className="text-slate-100 text-6xl font-bold">What I Do</h2>
       </div>
       <div className="grid lg:grid-cols-3 items-center gap-10 mt-10 mx-10 lg:mx-28">
-        <div className="px-8 py-10 space-y-8 bg-background shadow-md shadow-slate-500 hover:-translate-y-3 rounded-md cursor-pointer duration-300">
+        <div className="px-8 py-10 space-y-8 bg-background shadow-md hover:shadow-magenta shadow-slate-500 hover:-translate-y-3 rounded-md cursor-pointer duration-500">
           <h2 className="text-6xl text-magenta">
             <SiReact />
           </h2>
@@ -22,7 +22,7 @@ const Features = () => {
             close to the earth.
           </p>
         </div>
-        <div className="px-8 py-10 space-y-8 bg-background shadow-md shadow-slate-500 hover:-translate-y-3 rounded-md cursor-pointer duration-300">
+        <div className="px-8 py-10 space-y-8 bg-background shadow-md hover:shadow-magenta shadow-slate-500 hover:-translate-y-3 rounded-md cursor-pointer duration-300">
           <h2 className="text-6xl text-magenta">
             <FaHtml5 />
           </h2>
@@ -34,7 +34,7 @@ const Features = () => {
             close to the earth.
           </p>
         </div>
-        <div className="px-8 py-10 space-y-8 bg-background shadow-md shadow-slate-500 hover:-translate-y-3 rounded-md cursor-pointer duration-300">
+        <div className="px-8 py-10 space-y-8 bg-background shadow-md hover:shadow-magenta shadow-slate-500 hover:-translate-y-3 rounded-md cursor-pointer duration-300">
           <h2 className="text-6xl text-magenta">
             <AiOutlineMobile />
           </h2>
