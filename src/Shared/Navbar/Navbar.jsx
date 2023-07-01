@@ -11,6 +11,7 @@ import Hamburger from "hamburger-react";
 import { useContext } from "react";
 import { StateContext } from "../../Components/Context";
 import logo from "../../assets/logo2.png";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { isOpen, setIsOpen } = useContext(StateContext);
@@ -53,9 +54,28 @@ const Navbar = () => {
       sectionId: "contact",
     },
   ];
-
+  const navItemMotion = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
   return (
-    <div className="w-full overflow-y-scroll navbar-scrollbar px-3 py-5 h-screen bg-background">
+    <motion.div
+      initial={{ translateX: "-100vw" }}
+      transition={{ duration: 0.5 }}
+      animate={{ translateX: 0 }}
+      className="w-full overflow-y-scroll navbar-scrollbar px-3 py-5 h-screen bg-background">
       <h2 className="text-slate-100 text-4xl flex justify-end lg:hidden">
         <Hamburger toggled={isOpen} toggle={() => setIsOpen(false)} />
       </h2>
@@ -67,8 +87,11 @@ const Navbar = () => {
       <div className="py-10 mt-8 mx-5 flex flex-col">
         {navItem.map((item, index) => {
           return (
-            <button
+            <motion.button
               key={index}
+              variants={navItemMotion}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
               className="py-2 px-2 text-lg text-slate-300 font-medium uppercase  cursor-pointer hover:text-magenta transition-all duration-300">
               <ScrollLink
                 activeClass="text-magenta"
@@ -91,7 +114,7 @@ const Navbar = () => {
                 <span>{item.icon}</span>
                 {item.name}
               </NavLink> */}
-            </button>
+            </motion.button>
           );
         })}
         <div className="w-full h-[1px] bg-slate-700 flex flex-row items-center self-stretch mt-8 mb-4"></div>
@@ -119,7 +142,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

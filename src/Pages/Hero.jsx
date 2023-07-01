@@ -5,6 +5,7 @@ import { Twirl as Hamburger } from "hamburger-react";
 import heroBg from "../assets/hero.jpg";
 import { useContext } from "react";
 import { StateContext } from "../Components/Context";
+
 const Hero = () => {
   const { isOpen, setIsOpen } = useContext(StateContext);
   return (
@@ -38,11 +39,11 @@ const Hero = () => {
               <span className="text-magenta">
                 <TypeAnimation
                   sequence={[
-                    "Web Developer",
+                    "Front End Developer",
                     2000,
                     "Tech Enthusiastic",
                     2000,
-                    "Student",
+                    "MERN stack Developer",
                     2000,
                   ]}
                   speed={70}

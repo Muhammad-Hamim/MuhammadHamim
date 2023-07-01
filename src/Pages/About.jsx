@@ -1,5 +1,4 @@
 import { BsDashLg } from "react-icons/bs";
-
 const About = () => {
   return (
     <div id="about" className="py-28">
@@ -36,11 +35,11 @@ const About = () => {
               aesthetics with technical prowess, I craft seamless and intuitive
               user experiences. As a continuous learner, I stay updated with the
               latest industry trends, ensuring my solutions adhere to best
-              practices. Whether it's building responsive front-end interfaces
-              or developing robust back-end functionalities, I am committed to
-              delivering high-quality results. Let's collaborate and embark on a
-              journey to bring your web projects to life with innovation and
-              excellence!
+              practices. Whether it&apos;s building responsive front-end
+              interfaces or developing robust back-end functionalities, I am
+              committed to delivering high-quality results. Let&apos;s
+              collaborate and embark on a journey to bring your web projects to
+              life with innovation and excellence!
             </p>
           </div>
         </div>
