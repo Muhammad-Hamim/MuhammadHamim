@@ -4,6 +4,7 @@ import { FiFacebook } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 const Footer = () => {
+  
   return (
     <div className="flex items-center flex-col border-t-[1px] border-slate-700 py-6">
       <Link to="/">

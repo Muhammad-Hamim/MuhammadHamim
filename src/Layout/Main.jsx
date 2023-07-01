@@ -20,7 +20,6 @@ const Main = () => {
         <Outlet />
       </div>
     </div>
-    
   );
 };
 
