@@ -34,6 +34,21 @@ const Portfolio = () => {
       serverCode: "https://github.com/Muhammad-Hamim/the-dish-diary-server",
       technology: ["React js", "JavaScript", "TailwindCSS"],
     },
+    {
+      name: "Toyland Treasures",
+      photo: toyland,
+      category: "A toy sell website",
+      features: [
+        "Exclusive Toy Marketplace",
+        "Secure User Authentication",
+        "Responsive Website Design",
+        "Seamless Inventory Management",
+      ],
+      liveLink: "https://toyland-treasures.web.app/",
+      clientCode: "https://github.com/Muhammad-Hamim/toyland-Treasures-client",
+      serverCode: "https://github.com/Muhammad-Hamim/toyland-treasures-server",
+      technology: ["React js", "Node js", "MongoDB"],
+    },
   ];
 
   return (
@@ -44,12 +59,14 @@ const Portfolio = () => {
         </h4>
         <h2 className="text-slate-100 text-6xl font-bold">My Portfolio</h2>
       </div>
-      <div className="mt-10 mx-10 lg:mx-28">
+      <div className="mt-10 mx-8 lg:mx-28">
         {projects.map((project, index) => (
-          <div key={project.name} className="grid grid-cols-2">
+          <div
+            key={project.name}
+            className="flex flex-col lg:flex-row lg:items-center mb-10 lg:mb-0">
             <div
-              className={`w-full h-[50vh] bg-top hover:bg-bottom cursor-pointer ${
-                index % 2 === 0 ? "col-start-1" : "col-start-2"
+              className={`w-full lg:w-1/2 h-[50vh] bg-top hover:bg-bottom cursor-pointer ${
+                index % 2 === 0 ? "lg:order-1" : "lg:order-2"
               }`}
               style={{
                 backgroundImage: `url(${project.photo})`,
@@ -57,8 +74,8 @@ const Portfolio = () => {
                 transition: "ease-in-out 4s",
               }}></div>
             <div
-              className={`bg-background hover:shadow-sm hover:shadow-magenta duration-500 h-fit shadow-sm shadow-slate-500 text-slate-300 p-5 ${
-                index % 2 === 0 ? "col-start-1" : "col-start-2"
+              className={`"w-full lg:w-1/2 bg-background hover:shadow-sm hover:shadow-magenta duration-500 shadow-sm shadow-slate-500 text-slate-300 p-5 ${
+                index % 2 === 0 ? "lg:order-2" : "lg:order-1"
               }`}>
               <div>
                 <h2 className="text-3xl font-semibold">{project.name}</h2>

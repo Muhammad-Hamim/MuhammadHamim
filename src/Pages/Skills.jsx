@@ -1,8 +1,14 @@
 import { ImHtmlFive } from "react-icons/im";
 import { LiaNode } from "react-icons/lia";
 import { IoLogoJavascript } from "react-icons/io";
-import { FaReact, FaBootstrap } from "react-icons/fa";
-import { SiCss3, SiTailwindcss, SiExpress, SiMongodb } from "react-icons/si";
+import { FaReact, FaBootstrap, FaGithub } from "react-icons/fa";
+import {
+  SiCss3,
+  SiTailwindcss,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+} from "react-icons/si";
 
 const Skills = () => {
   const skills = [
@@ -15,6 +21,8 @@ const Skills = () => {
     { name: "Express js", icon: <SiExpress /> },
     { name: "Node js", icon: <LiaNode /> },
     { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "Firebase", icon: <SiFirebase /> },
+    { name: "GitHub", icon: <FaGithub /> },
   ];
 
   return (
@@ -23,7 +31,7 @@ const Skills = () => {
         <h4 className="text-magenta uppercase text-xl">Skills & Expertise</h4>
         <h2 className="text-slate-100 text-6xl font-bold">My Skills</h2>
       </div>
-      <div className="grid lg:grid-cols-4 items-center gap-10 mt-10 mx-10 lg:mx-28">
+      <div className="grid lg:grid-cols-4 items-center gap-10 mt-10 mx-8 lg:mx-28">
         {skills.map((item) => {
           return (
             <div

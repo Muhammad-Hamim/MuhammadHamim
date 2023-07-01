@@ -7,7 +7,7 @@ const About = () => {
         </h4>
         <h2 className="text-slate-100 text-6xl font-bold">About me</h2>
       </div>
-      <div className="mt-10 mx-10 lg:mx-28">
+      <div className="mt-10 mx-8 lg:mx-28">
         <div className="grid lg:grid-cols-2 items-start gap-14">
           <div>
             <img

@@ -12,8 +12,8 @@ const Hero = () => {
       id="home"
       className="hero min-h-screen relative"
       style={{ backgroundImage: `url('${heroBg}')` }}>
-      <div className="absolute top-8 right-8 lg:hidden">
-        <h2 className="text-slate-100 text-4xl">
+      <div className="">
+        <h2 className="text-slate-100 text-4xl absolute top-8 right-8 lg:hidden">
           <Hamburger toggled={isOpen} toggle={setIsOpen} />
         </h2>
       </div>
