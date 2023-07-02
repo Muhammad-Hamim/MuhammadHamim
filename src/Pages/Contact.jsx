@@ -1,22 +1,71 @@
 import { FiFacebook } from "react-icons/fi";
 import { LuGithub, LuLinkedin } from "react-icons/lu";
 import SectionHeader from "../Components/SectionHeader";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const divMotion1 = {
+    offscreen: { x: -100, opacity: 0 },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      rotate: [0, 10, 0],
+      transition: { type: "spring", bounce: 0.4, duration: 1 },
+    },
+  };
+  const divMotion2 = {
+    offscreen: { x: 100, opacity: 0 },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      rotate: [0, 10, 0],
+      transition: { type: "spring", bounce: 0.4, duration: 1 },
+    },
+  };
+
+  const textMotion = {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <div id="contact" className="py-28">
       <SectionHeader title="Contact With Me" subTitle="CONTACT" />
-      <div className="mx-8 lg:mx-28 grid lg:grid-cols-8 gap-8 items-center py-10">
-        <div className="lg:col-span-3 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
-          <h2 className="text-3xl font-semibold text-slate-100">
+      <motion.div
+        initial={"offscreen"}
+        whileInView={"onscreen"}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ staggerChildren: 0.5 }}
+        className="mx-8 lg:mx-28 grid lg:grid-cols-8 gap-8 items-center py-10">
+        <motion.div
+          variants={divMotion1}
+          className="lg:col-span-3 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
+          <motion.h2
+            variants={textMotion}
+            className="text-3xl font-semibold text-slate-100">
             Muhammad Hamim
-          </h2>
-          <p className="italic text-slate-500">Front End Developer</p>
-          <p className="text-slate-300 text-xl my-3">
+          </motion.h2>
+          <motion.p variants={textMotion} className="italic text-slate-500">
+            Front End Developer
+          </motion.p>
+          <motion.p
+            variants={textMotion}
+            className="text-slate-300 text-xl my-3">
             I am available for freelance work. Connect with me via and call in
             to my account.
-          </p>
-          <p className="text-slate-300 text-xl">
+          </motion.p>
+          <motion.p variants={textMotion} className="text-slate-300 text-xl">
             Phone:{" "}
             <a
               href="tel: +8801616026383"
@@ -24,8 +73,8 @@ const Contact = () => {
               <span>+8801616026383</span>
               <span className="absolute link -bottom-1 left-0 w-0 transition-all h-[2px] bg-magenta"></span>
             </a>
-          </p>
-          <p className="text-slate-300 text-xl">
+          </motion.p>
+          <motion.p variants={textMotion} className="text-slate-300 text-xl">
             Email:{" "}
             <a
               href="mailto: muhammadhamim.me@gmail.com"
@@ -33,7 +82,7 @@ const Contact = () => {
               <span>muhammadhamim.me</span>
               <span className="absolute link -bottom-1 left-0 w-0 transition-all h-[2px] bg-magenta"></span>
             </a>
-          </p>
+          </motion.p>
           <div className="mt-3">
             <h2 className="text-lg uppercase text-slate-400">find with me</h2>
             <div className="flex mt-6 gap-3">
@@ -60,8 +109,10 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="lg:col-span-5 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
+        </motion.div>
+        <motion.div
+          variants={divMotion2}
+          className="lg:col-span-5 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
           <div className="w-full grid lg:grid-cols-2 gap-4 mb-6">
             <div className="flex flex-col gap-2">
               <label
@@ -147,8 +198,8 @@ const Contact = () => {
               send message
             </button> */}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
