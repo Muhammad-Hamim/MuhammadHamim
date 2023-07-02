@@ -59,7 +59,7 @@ const Hero = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 1,
+        duration: 0.5,
       },
     },
   };
@@ -104,7 +104,7 @@ const Hero = () => {
                   sequence={[
                     "Front End Developer",
                     2000,
-                    "Tech Enthusiastic",
+                    "Tech Enthusiast",
                     2000,
                     "MERN stack Developer",
                     2000,

@@ -1,6 +1,7 @@
 import toyland from "../assets/toylandTreasures.jpeg";
 import dishDiary from "../assets/DishDiary.jpeg";
 import { GiCheckMark } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
   const projects = [
@@ -35,7 +36,7 @@ const Portfolio = () => {
       technology: ["React js", "JavaScript", "TailwindCSS"],
     },
     {
-      name: "Toyland Treasures",
+      name: "Polyglot Pioneers Academy",
       photo: toyland,
       category: "A toy sell website",
       features: [
@@ -50,7 +51,52 @@ const Portfolio = () => {
       technology: ["React js", "Node js", "MongoDB"],
     },
   ];
-
+  const projectMotion = {
+    offscreen: {
+      x: "-500",
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+  const textAnimation = {
+    offscreen: {
+      transform: "scaleX(0)",
+      transformOrigin: "left",
+      opacity: 0,
+    },
+    onscreen: {
+      transform: "scaleX(1)",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+  const textMotion = {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
   return (
     <div id="portfolio" className="py-28">
       <div className="text-center py-8">
@@ -61,26 +107,32 @@ const Portfolio = () => {
       </div>
       <div className="mt-10 mx-8 lg:mx-28">
         {projects.map((project, index) => (
-          <div
+          <motion.div
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ staggerChildren: 0.5 }}
             key={project.name}
             className="flex flex-col lg:flex-row lg:items-center mb-10 lg:mb-0">
-            <div
-              className={`w-full lg:w-1/2 h-[50vh] bg-top hover:bg-bottom cursor-pointer ${
+            <motion.div
+              variants={projectMotion}
+              className={`w-full lg:w-1/2 h-[50vh] bg-top cursor-pointer ${
                 index % 2 === 0 ? "lg:order-1" : "lg:order-2"
               }`}
               style={{
                 backgroundImage: `url(${project.photo})`,
                 backgroundSize: "cover",
-                transition: "ease-in-out 4s",
-              }}></div>
-            <div
+                // transition: "ease-in-out 4s",
+              }}></motion.div>
+            <motion.div
+              variants={textAnimation}
               className={`"w-full lg:w-1/2 bg-background hover:shadow-sm hover:shadow-magenta duration-500 shadow-sm shadow-slate-500 text-slate-300 p-5 ${
                 index % 2 === 0 ? "lg:order-2" : "lg:order-1"
               }`}>
-              <div>
+              <motion.div variants={textMotion}>
                 <h2 className="text-3xl font-semibold">{project.name}</h2>
                 <p className="italic text-slate-500">{project.category}</p>
-              </div>
+              </motion.div>
               <div className="flex items-center flex-wrap my-4 gap-4">
                 <a
                   href={project.liveLink}
@@ -123,8 +175,8 @@ const Portfolio = () => {
                   </p>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </div>
