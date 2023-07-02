@@ -45,7 +45,7 @@ const Contact = () => {
       <motion.div
         initial={"offscreen"}
         whileInView={"onscreen"}
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.5 }}
         transition={{ staggerChildren: 0.5 }}
         className="mx-8 lg:mx-28 grid lg:grid-cols-8 gap-8 items-center py-10">
         <motion.div
@@ -111,7 +111,7 @@ const Contact = () => {
           </div>
         </motion.div>
         <motion.div
-          variants={divMotion2}
+          variants={divMotion1}
           className="lg:col-span-5 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
           <div className="w-full grid lg:grid-cols-2 gap-4 mb-6">
             <div className="flex flex-col gap-2">
