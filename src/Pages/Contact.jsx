@@ -13,15 +13,15 @@ const Contact = () => {
       transition: { type: "spring", bounce: 0.4, duration: 1 },
     },
   };
-  const divMotion2 = {
-    offscreen: { x: 100, opacity: 0 },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: [0, 10, 0],
-      transition: { type: "spring", bounce: 0.4, duration: 1 },
-    },
-  };
+  // const divMotion2 = {
+  //   offscreen: { x: 100, opacity: 0 },
+  //   onscreen: {
+  //     x: 0,
+  //     opacity: 1,
+  //     rotate: [0, 10, 0],
+  //     transition: { type: "spring", bounce: 0.4, duration: 1 },
+  //   },
+  // };
 
   const textMotion = {
     offscreen: {
@@ -62,8 +62,9 @@ const Contact = () => {
           <motion.p
             variants={textMotion}
             className="text-slate-300 text-xl my-3">
-            I am available for freelance work. Connect with me via and call in
-            to my account.
+            I am open to freelance opportunities! Feel free to connect with me
+            through the contact details provided on my portfolio website. I look
+            forward to discussing potential collaborations with you.
           </motion.p>
           <motion.p variants={textMotion} className="text-slate-300 text-xl">
             Phone:{" "}
