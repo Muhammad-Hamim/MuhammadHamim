@@ -69,7 +69,7 @@ const Navbar = () => {
           return (
             <button
               key={index}
-              className="py-2 px-2 text-lg text-slate-300 font-medium uppercase  cursor-pointer hover:text-magenta transition-all duration-300">
+              className="py-2 px-2 text-lg text-slate-300 font-medium uppercase cursor-pointer hover:text-magenta transition-all duration-300">
               <ScrollLink
                 activeClass="text-magenta"
                 to={item.sectionId}
@@ -79,7 +79,7 @@ const Navbar = () => {
                 duration={500}
                 className="cursor-pointer hover:text-magenta flex items-center gap-2">
                 <span>{item.icon}</span>
-                {item.name}
+                <span>{item.name}</span>
               </ScrollLink>
             </button>
           );

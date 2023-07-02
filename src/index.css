@@ -38,3 +38,8 @@
   background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
   filter: grayscale(0);
 }
+
+.one:hover .link{
+  width: 100%;
+  
+}

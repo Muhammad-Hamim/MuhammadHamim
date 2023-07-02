@@ -5,9 +5,17 @@ import { Twirl as Hamburger } from "hamburger-react";
 import heroBg from "../assets/hero.jpg";
 import { useContext } from "react";
 import { StateContext } from "../Components/Context";
+import resume from "../assets/Muhammad-Hamim.pdf";
+import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
   const { isOpen, setIsOpen } = useContext(StateContext);
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "MuhammadHamim-resume.pdf";
+    link.click();
+  };
   return (
     <div
       id="home"
@@ -53,12 +61,18 @@ const Hero = () => {
             </h2>
           </div>
           <div className="mt-5 space-x-2">
-            <button className="btn btn-primary">
+            <button onClick={handleDownloadResume} className="btn btn-primary">
               <FaDownload /> Download Resume
             </button>
-            <button className="btn btn-primary">
+            <ScrollLink
+              to="contact"
+              spy={true}
+              offset={-70}
+              smooth={true}
+              duration={500}
+              className="btn btn-primary">
               <FaUserTie /> Hire me
-            </button>
+            </ScrollLink>
           </div>
         </div>
       </div>

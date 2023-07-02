@@ -1,5 +1,12 @@
 import { BsDashLg } from "react-icons/bs";
+import resume from '../assets/Muhammad-Hamim.pdf'
 const About = () => {
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "MuhammadHamim-resume.pdf";
+    link.click();
+  };
   return (
     <div id="about" className="py-28">
       <div className="text-center py-8">
@@ -17,7 +24,9 @@ const About = () => {
               alt=""
             />
             <div className="mt-4 text-center">
-              <button className="relative px-6 py-3 font-bold text-slate-200 group">
+              <button
+                onClick={handleDownloadResume}
+                className="relative px-6 py-3 font-bold text-slate-200 group">
                 <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-2 translate-y-2 bg-magenta rounded-sm group-hover:translate-x-0 group-hover:translate-y-0" />
                 <span className="absolute inset-0 w-full h-full border-4 border-slate-200 rounded-sm" />
                 <span className="relative">Download resume</span>
