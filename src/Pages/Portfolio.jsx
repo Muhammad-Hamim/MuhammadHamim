@@ -122,7 +122,6 @@ const Portfolio = () => {
               style={{
                 backgroundImage: `url(${project.photo})`,
                 backgroundSize: "cover",
-                // transition: "ease-in-out 4s",
               }}></motion.div>
             <motion.div
               variants={textAnimation}
