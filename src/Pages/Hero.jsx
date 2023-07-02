@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { StateContext } from "../Components/Context";
 import resume from "../assets/Muhammad-Hamim.pdf";
 import { Link as ScrollLink } from "react-scroll";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const { isOpen, setIsOpen } = useContext(StateContext);
@@ -15,28 +16,88 @@ const Hero = () => {
     link.download = "MuhammadHamim-resume.pdf";
     link.click();
   };
+  const lineMotion = {
+    offscreen: {
+      x: "-500",
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+  const textAnimation = {
+    offscreen: {
+      transform: "scaleX(0)",
+      transformOrigin: "left",
+
+      opacity: 0,
+    },
+    onscreen: {
+      transform: "scaleX(1)",
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
+  const textMotion = {
+    offscreen: {
+      y: -100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1,
+      },
+    },
+  };
   return (
     <div
       id="home"
       className="hero min-h-screen relative"
       style={{ backgroundImage: `url('${heroBg}')` }}>
-      <div className="">
+      <div>
         <h2 className="text-slate-100 text-4xl absolute top-8 right-8 lg:hidden">
           <Hamburger toggled={isOpen} toggle={setIsOpen} />
         </h2>
       </div>
-      <div className="hero-content ">
-        <div className="-mt-[25%] h-fit flex gap-3">
-          <div className="w-[15px] bg-magenta"></div>
+      <motion.div
+        initial={"offscreen"}
+        whileInView={"onscreen"}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ staggerChildren: 0.5 }}
+        className="hero-content ">
+        <motion.div className="h-fit flex gap-3">
+          <motion.div
+            variants={lineMotion}
+            className="w-[15px] bg-magenta"></motion.div>
           <div className="my-8 space-y-2 ">
-            <h3 className="text-4xl font-medium text-slate-300">
+            <motion.h3
+              variants={textAnimation}
+              className="text-4xl font-medium text-slate-300">
               Hey, I&apos;m
-            </h3>
-            <h1 className="text-4xl lg:text-6xl font-bold text-slate-100">
+            </motion.h3>
+            <motion.h1
+              variants={textAnimation}
+              className="text-4xl lg:text-6xl font-bold text-slate-100">
               Muhammad Hamim
-            </h1>
+            </motion.h1>
 
-            <h2 className="text-2xl lg:text-4xl font-semibold">
+            <motion.h2
+              variants={textMotion}
+              className="text-2xl lg:text-4xl font-semibold">
               <span className="text-slate-300">I am a </span>
               <span className="text-magenta">
                 <TypeAnimation
@@ -52,8 +113,8 @@ const Hero = () => {
                   repeat={Infinity}
                 />
               </span>
-            </h2>
-            <div className="mt-5 space-x-2">
+            </motion.h2>
+            <motion.div variants={textMotion} className="mt-5 space-x-2">
               <button
                 onClick={handleDownloadResume}
                 className="btn btn-primary">
@@ -68,10 +129,10 @@ const Hero = () => {
                 className="btn btn-primary">
                 <FaUserTie /> Hire me
               </ScrollLink>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
