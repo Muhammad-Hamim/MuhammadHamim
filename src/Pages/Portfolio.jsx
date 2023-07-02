@@ -2,6 +2,7 @@ import toyland from "../assets/toylandTreasures.jpeg";
 import dishDiary from "../assets/DishDiary.jpeg";
 import { GiCheckMark } from "react-icons/gi";
 import { motion } from "framer-motion";
+import SectionHeader from "../Components/SectionHeader";
 
 const Portfolio = () => {
   const projects = [
@@ -99,12 +100,10 @@ const Portfolio = () => {
   };
   return (
     <div id="portfolio" className="py-28">
-      <div className="text-center py-8">
-        <h4 className="text-magenta uppercase text-xl">
-          VISIT MY PORTFOLIO AND PROVIDE YOUR FEEDBACK
-        </h4>
-        <h2 className="text-slate-100 text-6xl font-bold">My Portfolio</h2>
-      </div>
+      <SectionHeader
+        title="My Portfolio"
+        subTitle="VISIT MY PORTFOLIO AND PROVIDE YOUR FEEDBACK"
+      />
       <div className="mt-10 mx-8 lg:mx-28">
         {projects.map((project, index) => (
           <motion.div

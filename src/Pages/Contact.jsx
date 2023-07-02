@@ -1,13 +1,11 @@
 import { FiFacebook } from "react-icons/fi";
 import { LuGithub, LuLinkedin } from "react-icons/lu";
+import SectionHeader from "../Components/SectionHeader";
 
 const Contact = () => {
   return (
     <div id="contact" className="py-28">
-      <div className="text-center py-8">
-        <h4 className="text-magenta uppercase text-xl">CONTACT</h4>
-        <h2 className="text-slate-100 text-6xl font-bold">Contact With Me</h2>
-      </div>
+      <SectionHeader title="Contact With Me" subTitle="CONTACT" />
       <div className="mx-8 lg:mx-28 grid lg:grid-cols-8 gap-8 items-center py-10">
         <div className="lg:col-span-3 p-6 bg-background shadow-sm shadow-slate-600 rounded-md">
           <h2 className="text-3xl font-semibold text-slate-100">

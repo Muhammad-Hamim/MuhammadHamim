@@ -1,6 +1,7 @@
 import { BsDashLg } from "react-icons/bs";
 import resume from "../assets/Muhammad-Hamim.pdf";
 import { motion } from "framer-motion";
+import SectionHeader from "../Components/SectionHeader";
 const About = () => {
   const handleDownloadResume = () => {
     const link = document.createElement("a");
@@ -26,12 +27,10 @@ const About = () => {
   };
   return (
     <div id="about" className="py-28">
-      <div className="text-center py-8">
-        <h4 className="text-magenta uppercase text-xl">
-          Unveiling My Journey and Passions
-        </h4>
-        <h2 className="text-slate-100 text-6xl font-bold">About me</h2>
-      </div>
+      <SectionHeader
+        title="About me"
+        subTitle="Unveiling My Journey and Passions"
+      />
       <div className="mt-10 mx-8 lg:mx-28">
         <motion.div
           initial={"offscreen"}

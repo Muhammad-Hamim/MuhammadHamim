@@ -82,7 +82,7 @@ const Hero = () => {
         <motion.div className="h-fit flex gap-3">
           <motion.div
             variants={lineMotion}
-            className="w-[15px] bg-magenta"></motion.div>
+            className="w-[10px] bg-background"></motion.div>
           <div className="my-8 space-y-2 ">
             <motion.h3
               variants={textAnimation}

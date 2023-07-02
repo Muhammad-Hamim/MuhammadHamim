@@ -2,6 +2,7 @@ import { SiReact } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { AiOutlineMobile } from "react-icons/ai";
 import { motion } from "framer-motion";
+import SectionHeader from "../Components/SectionHeader";
 
 const Features = () => {
   const imageAnimate = {
@@ -24,10 +25,7 @@ const Features = () => {
   };
   return (
     <div id="features" className="py-28">
-      <div className="text-center py-8">
-        <h4 className="text-magenta uppercase text-xl">Features</h4>
-        <h2 className="text-slate-100 text-6xl font-bold">What I Do</h2>
-      </div>
+      <SectionHeader title="What I Do" subTitle="Features" />
       <div className="grid lg:grid-cols-3 items-center gap-10 mt-10 mx-8 lg:mx-28">
         <motion.div
           initial={"offscreen"}
