@@ -4,7 +4,6 @@ import { FiFacebook } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 const Footer = () => {
-  
   return (
     <div className="flex items-center flex-col border-t-[1px] border-slate-700 py-6">
       <Link to="/">
@@ -19,19 +18,22 @@ const Footer = () => {
       <div>
         <div className="flex mt-6 gap-3">
           <a
-            href="#"
+            href="https://www.facebook.com/Muhammad.Hamim.01"
+            rel="noreferrer"
             target="_blank"
             className="text-xl bg-gray-900 text-white p-3 rounded-md hover:text-magenta duration-300 hover:-translate-y-2">
             <FiFacebook />
           </a>
           <a
-            href="#"
+            href="https://github.com/Muhammad-Hamim"
+            rel="noreferrer"
             target="_blank"
             className="text-xl bg-gray-900 text-white p-3 rounded-md hover:text-magenta duration-300 hover:-translate-y-2">
             <LuGithub />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/muhammadhamim01/"
+            rel="noreferrer"
             target="_blank"
             className="text-xl bg-gray-900 text-white p-3 rounded-md hover:text-magenta duration-300 hover:-translate-y-2">
             <LuLinkedin />

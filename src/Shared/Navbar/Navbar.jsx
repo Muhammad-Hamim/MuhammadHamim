@@ -89,19 +89,22 @@ const Navbar = () => {
           <h2 className="text-lg uppercase text-slate-400">find with me</h2>
           <div className="flex justify-around mt-6 gap-3">
             <a
-              href="#"
+              href="https://www.facebook.com/Muhammad.Hamim.01"
+              rel="noreferrer"
               target="_blank"
               className="text-xl bg-gray-900 text-white p-3 rounded-md hover:text-magenta duration-300 hover:-translate-y-2">
               <FiFacebook />
             </a>
             <a
-              href="#"
+              href="https://github.com/Muhammad-Hamim"
+              rel="noreferrer"
               target="_blank"
               className="text-xl bg-gray-900 text-white p-3 rounded-md hover:text-magenta duration-300 hover:-translate-y-2">
               <LuGithub />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/muhammadhamim01/"
+              rel="noreferrer"
               target="_blank"
               className="text-xl bg-gray-900 text-white p-3 rounded-md hover:text-magenta duration-300 hover:-translate-y-2">
               <LuLinkedin />
