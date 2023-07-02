@@ -30,7 +30,7 @@ const Skills = () => {
     <div id="skills" className="py-28">
       <SectionHeader title="My Skills" subTitle="Skills & Expertise" />
       <div className="grid lg:grid-cols-4 items-center gap-10 mt-10 mx-8 lg:mx-28">
-        {skills.map((item, i) => {
+        {skills.map((item) => {
           return (
             <motion.div
               variants={{

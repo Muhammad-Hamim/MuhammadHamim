@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { FaUserTie, FaDownload } from "react-icons/fa";
 import { Twirl as Hamburger } from "hamburger-react";
@@ -26,18 +25,13 @@ const Hero = () => {
           <Hamburger toggled={isOpen} toggle={setIsOpen} />
         </h2>
       </div>
-      <div className="hero-content text-center">
-        <div className="-mt-[25%]">
-          <div className="flex justify-center mt-16">
-            <Link to="/">
-              <img
-                className="w-72 h-72 rounded-full border-slate-700 border-[16px] cursor-pointer"
-                src="https://i.ibb.co/ZBWt45G/rony.jpg"
-                alt=""
-              />
-            </Link>
-          </div>
-          <div className="mt-8 space-y-2 ">
+      <div className="hero-content ">
+        <div className="-mt-[25%] h-fit flex gap-3">
+          <div className="w-[15px] bg-magenta"></div>
+          <div className="my-8 space-y-2 ">
+            <h3 className="text-4xl font-medium text-slate-300">
+              Hey, I&apos;m
+            </h3>
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-100">
               Muhammad Hamim
             </h1>
@@ -59,20 +53,22 @@ const Hero = () => {
                 />
               </span>
             </h2>
-          </div>
-          <div className="mt-5 space-x-2">
-            <button onClick={handleDownloadResume} className="btn btn-primary">
-              <FaDownload /> Download Resume
-            </button>
-            <ScrollLink
-              to="contact"
-              spy={true}
-              offset={-70}
-              smooth={true}
-              duration={500}
-              className="btn btn-primary">
-              <FaUserTie /> Hire me
-            </ScrollLink>
+            <div className="mt-5 space-x-2">
+              <button
+                onClick={handleDownloadResume}
+                className="btn btn-primary">
+                <FaDownload /> Download Resume
+              </button>
+              <ScrollLink
+                to="contact"
+                spy={true}
+                offset={-70}
+                smooth={true}
+                duration={500}
+                className="btn btn-primary">
+                <FaUserTie /> Hire me
+              </ScrollLink>
+            </div>
           </div>
         </div>
       </div>
