@@ -194,9 +194,6 @@ const Contact = () => {
               </span>
               <span className="relative">send message</span>
             </button>
-            {/* <button className="text-center shadow-sm hover:shadow-magenta shadow-slate-500 w-full bg-neutral-900 duration-200 rounded-sm font-semibold text-magenta uppercase py-4">
-              send message
-            </button> */}
           </div>
         </motion.div>
       </motion.div>
