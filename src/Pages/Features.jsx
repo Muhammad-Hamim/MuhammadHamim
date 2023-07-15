@@ -77,7 +77,7 @@ const Features = () => {
           <motion.h1
             variants={textAnimate}
             className="text-slate-300 text-2xl lg:text-4xl font-medium">
-            App Development
+            Responsive Design
           </motion.h1>
           <motion.p variants={textAnimate} className="text-slate-400">
             I throw myself down among the tall grass by the stream as I lie

@@ -10,27 +10,25 @@
   color: #ff014f;
 }
 
-
 .aboutImg {
   --color: #ff014f; /* the border color */
-  --border: 10px;   /* the border thickness*/
-  --offset: 20px;   /* control the offset*/
-  --gap: 5px;       /* the gap on hover */
-  
-  --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
-  --_o: calc(3*var(--offset));
-  padding: 
-    calc(var(--gap) + var(--border))
+  --border: 10px; /* the border thickness*/
+  --offset: 20px; /* control the offset*/
+  --gap: 5px; /* the gap on hover */
+
+  --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),
+    var(--color) 0;
+  --_o: calc(3 * var(--offset));
+  padding: calc(var(--gap) + var(--border))
     calc(var(--gap) + var(--border) + var(--offset))
     calc(var(--gap) + var(--border) + var(--offset))
     calc(var(--gap) + var(--border));
-  background: 
-    linear-gradient(      var(--_c)) var(--_o) var(--_o), 
-    linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
+  background: linear-gradient(var(--_c)) var(--_o) var(--_o),
+    linear-gradient(90deg, var(--_c)) var(--_o) var(--_o);
   background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
   background-repeat: no-repeat;
-  filter: grayscale(.4);
-  transition: .5s;
+  filter: grayscale(0.4);
+  transition: 0.5s;
   cursor: pointer;
 }
 .aboutImg:hover {
@@ -39,7 +37,20 @@
   filter: grayscale(0);
 }
 
-.one:hover .link{
+.one:hover .link {
   width: 100%;
-  
 }
+
+.button {
+  border-radius: 6px;
+  background: linear-gradient(145deg, #1e2024, #23272b);
+  box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  transition: 0.4s;
+  padding: 15px 30px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: 0 none;
+  cursor: pointer;
+}
+

@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { FaUserTie, FaDownload } from "react-icons/fa";
 import { Twirl as Hamburger } from "hamburger-react";
-import heroBg from "../assets/hero.jpg";
+// import heroBg from "../assets/hero.jpg";
 import { useContext } from "react";
 import { StateContext } from "../Components/Context";
 import resume from "../assets/Muhammad-Hamim.pdf";
@@ -15,21 +15,6 @@ const Hero = () => {
     link.href = resume;
     link.download = "MuhammadHamim-resume.pdf";
     link.click();
-  };
-  const lineMotion = {
-    offscreen: {
-      x: "-500",
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1,
-      },
-    },
   };
   const textAnimation = {
     offscreen: {
@@ -68,8 +53,9 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="hero min-h-screen relative"
-      style={{ backgroundImage: `url('${heroBg}')` }}>
+      className="hero min-h-screen relative bg-background"
+      // style={{ backgroundImage: `url('${heroBg}')` }}
+    >
       <div>
         <h2 className="text-slate-100 text-4xl absolute top-8 right-8 lg:hidden">
           <Hamburger toggled={isOpen} toggle={setIsOpen} />
@@ -81,66 +67,81 @@ const Hero = () => {
         viewport={{ once: false, amount: 0.5 }}
         transition={{ staggerChildren: 0.5 }}
         className="hero-content ">
-        <motion.div className="h-fit flex gap-3">
-          <motion.div
-            variants={lineMotion}
-            className="w-[10px] bg-background"></motion.div>
-          <div className="my-8 space-y-2 ">
-            <motion.h3
-              variants={textAnimation}
-              className="text-4xl font-medium text-slate-300">
-              Hey, I&apos;m
-            </motion.h3>
-            <motion.h1
-              variants={textAnimation}
-              className="text-4xl lg:text-6xl font-bold text-slate-100">
-              Muhammad Hamim
-            </motion.h1>
+        <motion.div className="">
+          <motion.h3
+            variants={textAnimation}
+            className="text-4xl font-medium text-slate-300">
+            Hey, I&apos;m
+          </motion.h3>
+          <motion.h1
+            variants={textAnimation}
+            className="text-4xl my-3 lg:text-6xl font-bold text-slate-100">
+            Muhammad Hamim
+          </motion.h1>
 
-            <motion.h2
-              variants={textMotion}
-              className="text-2xl lg:text-4xl font-semibold">
-              <span className="text-slate-300">I am a </span>
-              <span className="text-magenta">
-                <TypeAnimation
-                  sequence={[
-                    "Front End Developer",
-                    2000,
-                    "Tech Enthusiast",
-                    2000,
-                    "MERN stack Developer",
-                    2000,
-                  ]}
-                  speed={70}
-                  repeat={Infinity}
-                />
+          <motion.h2
+            variants={textMotion}
+            className="text-2xl lg:text-4xl font-semibold">
+            <span className="text-slate-300">I am a </span>
+            <span className="text-magenta">
+              <TypeAnimation
+                sequence={[
+                  "Front End Developer",
+                  2000,
+                  "Tech Enthusiastic",
+                  2000,
+                  "MERN stack Developer",
+                  2000,
+                ]}
+                speed={70}
+                repeat={Infinity}
+              />
+            </span>
+          </motion.h2>
+          <motion.div
+            variants={textMotion}
+            className="mt-5 flex items-center gap-5 flex-wrap">
+            <button
+              onClick={handleDownloadResume}
+              className="button hover:text-magenta flex items-center gap-1">
+              <span>
+                <FaDownload />
               </span>
-            </motion.h2>
-            <motion.div variants={textMotion} className="mt-5 space-x-2">
-              <button
+              <span>Download Resume</span>
+            </button>
+            <ScrollLink
+              to="contact"
+              spy={true}
+              offset={-70}
+              smooth={true}
+              duration={500}
+              className="button hover:text-magenta flex items-center gap-1">
+              <span>
+                <FaUserTie />
+              </span>
+              <span>Hire me</span>
+            </ScrollLink>
+            {/* <button
                 onClick={handleDownloadResume}
-                className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-indigo-600 border-2 border-indigo-600 rounded-sm hover:text-white group hover:bg-gray-50">
-                <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease" />
-                <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                className="button flex items-center gap-1 hover:text-magenta">
+                <span>
                   <FaDownload />
                 </span>
-                <span className="relative">Download Resume</span>
+                <span>Download Resume</span>
               </button>
               <ScrollLink
-                to="contact"
-                spy={true}
-                offset={-70}
-                smooth={true}
-                duration={500}
-                className="relative cursor-pointer inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-indigo-600 border-2 border-indigo-600 rounded-sm hover:text-white group hover:bg-gray-50">
-                <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease" />
-                <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                // to="contact"
+                // spy={true}
+                // offset={-70}
+                // smooth={true}
+                // duration={500}
+                className="button flex items-center gap-1 w-fit hover:text-magenta">
+                <span>
                   <FaUserTie />
                 </span>
-                <span className="relative">Hire me</span>
-              </ScrollLink>
-            </motion.div>
-          </div>
+                <span>Hire me</span>
+              </ScrollLink> */}
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>
