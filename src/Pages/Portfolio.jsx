@@ -178,7 +178,7 @@ const Portfolio = () => {
                   {project.technology.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-sm bg-gray-700/50 text-gray-300 rounded-full"
+                      className="px-3 py-1 text-sm bg-gray-700/50 text-[#00ff00] rounded-full"
                     >
                       {tech}
                     </span>

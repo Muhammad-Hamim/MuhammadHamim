@@ -58,7 +58,7 @@ const Hero = () => {
             </div>
           </div>
           <motion.div className="relative">
-            <div className="glass-card p-4">
+            <div className="glass-card p-2">
               <img 
                 src={profile}
                 alt="Muhammad Hamim"
