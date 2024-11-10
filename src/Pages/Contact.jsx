@@ -10,9 +10,9 @@ const Contact = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const cardVariants = {
@@ -23,9 +23,9 @@ const Contact = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 1
-      }
-    }
+        duration: 1,
+      },
+    },
   };
 
   const inputVariants = {
@@ -36,9 +36,9 @@ const Contact = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const socialVariants = {
@@ -48,21 +48,24 @@ const Contact = () => {
       transition: {
         type: "spring",
         bounce: 0.6,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
-    <div id="contact" className="py-24 bg-gradient-to-b from-background via-background/90 to-background">
+    <div
+      id="contact"
+      className="py-24 bg-gradient-to-b from-background via-background/90 to-background"
+    >
       <SectionHeader title="Get In Touch" subTitle="CONTACT" />
-      
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
-        className="container mx-auto px-4 lg:px-8 mt-12"
+        className="container lg:max-w-7xl mx-auto px-4 lg:px-8 mt-12"
       >
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Info Card */}
@@ -70,37 +73,62 @@ const Contact = () => {
             variants={cardVariants}
             className="lg:col-span-4 p-8 bg-neutral-900/50 backdrop-blur-sm rounded-xl border border-neutral-800 shadow-lg"
           >
-            <motion.h2 variants={inputVariants} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-magenta via-purple-500 to-blue-500">
+            <motion.h2
+              variants={inputVariants}
+              className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-magenta via-purple-500 to-blue-500"
+            >
               Muhammad Hamim
             </motion.h2>
-            <motion.p variants={inputVariants} className="text-neutral-400 mt-1">
+            <motion.p
+              variants={inputVariants}
+              className="text-neutral-400 mt-1"
+            >
               Frontend Developer
             </motion.p>
-            
-            <motion.p variants={inputVariants} className="mt-6 text-neutral-300 leading-relaxed">
-              I&apos;m available for freelance projects and exciting opportunities. Let&apos;s create something amazing together!
+
+            <motion.p
+              variants={inputVariants}
+              className="mt-6 text-neutral-300 leading-relaxed"
+            >
+              I&apos;m available for freelance projects and exciting
+              opportunities. Let&apos;s create something amazing together!
             </motion.p>
 
             <motion.div variants={inputVariants} className="mt-8 space-y-4">
-              <a href="tel:+8801616026383" className="flex items-center gap-3 text-neutral-300 hover:text-magenta transition-colors duration-300">
+              <a
+                href="tel:+8801616026383"
+                className="flex items-center gap-3 text-neutral-300 hover:text-magenta transition-colors duration-300"
+              >
                 <LuPhone className="w-5 h-5" />
                 <span>+880 1616 026383</span>
               </a>
-              <a href="mailto:muhammadhamim.me@gmail.com" className="flex items-center gap-3 text-neutral-300 hover:text-magenta transition-colors duration-300">
+              <a
+                href="mailto:muhammadhamim.me@gmail.com"
+                className="flex items-center gap-3 text-neutral-300 hover:text-magenta transition-colors duration-300"
+              >
                 <LuMail className="w-5 h-5" />
                 <span>muhammadhamim.me@gmail.com</span>
               </a>
             </motion.div>
 
-            <motion.div variants={inputVariants} className="mt-8 pt-8 border-t border-neutral-800">
+            <motion.div
+              variants={inputVariants}
+              className="mt-8 pt-8 border-t border-neutral-800"
+            >
               <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
                 Connect With Me
               </h3>
               <div className="flex gap-4">
                 {[
-                  { Icon: FiFacebook, url: "https://www.facebook.com/Muhammad.Hamim.01" },
+                  {
+                    Icon: FiFacebook,
+                    url: "https://www.facebook.com/Muhammad.Hamim.01",
+                  },
                   { Icon: LuGithub, url: "https://github.com/Muhammad-Hamim" },
-                  { Icon: LuLinkedin, url: "https://www.linkedin.com/in/muhammadhamim01/" }
+                  {
+                    Icon: LuLinkedin,
+                    url: "https://www.linkedin.com/in/muhammadhamim01/",
+                  },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
@@ -125,7 +153,10 @@ const Contact = () => {
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div variants={inputVariants} className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium text-neutral-300">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-neutral-300"
+                  >
                     Name
                   </label>
                   <input
@@ -135,9 +166,12 @@ const Contact = () => {
                     placeholder="Your name"
                   />
                 </motion.div>
-                
+
                 <motion.div variants={inputVariants} className="space-y-2">
-                  <label htmlFor="phone" className="block text-sm font-medium text-neutral-300">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-neutral-300"
+                  >
                     Phone
                   </label>
                   <input
@@ -150,7 +184,10 @@ const Contact = () => {
               </div>
 
               <motion.div variants={inputVariants} className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-medium text-neutral-300">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-neutral-300"
+                >
                   Email
                 </label>
                 <input
@@ -162,7 +199,10 @@ const Contact = () => {
               </motion.div>
 
               <motion.div variants={inputVariants} className="space-y-2">
-                <label htmlFor="subject" className="block text-sm font-medium text-neutral-300">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-neutral-300"
+                >
                   Subject
                 </label>
                 <input
@@ -174,7 +214,10 @@ const Contact = () => {
               </motion.div>
 
               <motion.div variants={inputVariants} className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium text-neutral-300">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-neutral-300"
+                >
                   Message
                 </label>
                 <textarea

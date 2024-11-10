@@ -17,24 +17,24 @@ const About = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 30
+      y: 30,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const stats = [
@@ -52,13 +52,13 @@ const About = () => {
       </div>
 
       <SectionHeader title="About Me" subTitle="My Journey" />
-      
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="container mx-auto px-4 mt-16"
+        className="container lg:max-w-7xl mx-auto px-4 mt-16"
       >
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Section */}
@@ -75,13 +75,15 @@ const About = () => {
                   transition={{ duration: 0.4 }}
                 />
               </div>
-              
+
               {/* Stats overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent p-6">
                 <div className="grid grid-cols-3 gap-4">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
-                      <div className="text-2xl font-bold text-white">{stat.value}</div>
+                      <div className="text-2xl font-bold text-white">
+                        {stat.value}
+                      </div>
                       <div className="text-sm text-gray-400">{stat.label}</div>
                     </div>
                   ))}
@@ -103,15 +105,25 @@ const About = () => {
 
             <div className="space-y-4 text-gray-300">
               <p>
-                Hello! I&apos;m Muhammad Hamim, a passionate Frontend Developer specializing in building responsive and user-friendly web applications. With expertise in React, JavaScript, and modern CSS frameworks, I transform ideas into seamless digital experiences.
-              </p>
-              
-              <p>
-                My development philosophy centers on creating clean, maintainable code while ensuring optimal performance and user experience. I stay current with industry trends and best practices to deliver modern, scalable solutions.
+                Hello! I&apos;m Muhammad Hamim, a passionate Frontend Developer
+                specializing in building responsive and user-friendly web
+                applications. With expertise in React, JavaScript, and modern
+                CSS frameworks, I transform ideas into seamless digital
+                experiences.
               </p>
 
               <p>
-                Beyond coding, I&apos;m dedicated to continuous learning and collaboration. I thrive in environments where I can contribute to innovative projects and solve complex challenges through creative solutions.
+                My development philosophy centers on creating clean,
+                maintainable code while ensuring optimal performance and user
+                experience. I stay current with industry trends and best
+                practices to deliver modern, scalable solutions.
+              </p>
+
+              <p>
+                Beyond coding, I&apos;m dedicated to continuous learning and
+                collaboration. I thrive in environments where I can contribute
+                to innovative projects and solve complex challenges through
+                creative solutions.
               </p>
             </div>
 
@@ -136,7 +148,7 @@ const About = () => {
                 >
                   <FaGithub size={24} />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.linkedin.com/in/muhammadhamim01/"
                   target="_blank"

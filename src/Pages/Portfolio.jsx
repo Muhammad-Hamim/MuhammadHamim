@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import toyland from "../assets/toylandTreasures.jpeg";
 import dishDiary from "../assets/DishDiary.jpeg";
-import onlineVotingApplication from "../assets/online-voting-application.png";import SectionHeader from "../Components/SectionHeader";
+import onlineVotingApplication from "../assets/online-voting-application.png";
+import SectionHeader from "../Components/SectionHeader";
 import { FaEye, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { BiChip } from "react-icons/bi";
 
@@ -17,9 +18,19 @@ const Portfolio = () => {
       features: [
         "Real-time voting updates",
         "Role-based access control",
-        "Comprehensive voting history and results"
+        "Comprehensive voting history and results",
       ],
-      technology: ["React.js", "TypeScript", "Node.js", "MongoDB",'Mongoose', "Express.js", "JWT", "Tailwind CSS",'Shadcn UI'],
+      technology: [
+        "React.js",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Mongoose",
+        "Express.js",
+        "JWT",
+        "Tailwind CSS",
+        "Shadcn UI",
+      ],
       liveLink: "https://online-voting-app-client.vercel.app/",
       clientCode: "https://github.com/Muhammad-Hamim/online-voting-app-client",
     },
@@ -30,13 +41,20 @@ const Portfolio = () => {
       features: [
         "User authentication and authorization",
         "Dynamic product management",
-        "Responsive design across devices"
+        "Responsive design across devices",
       ],
-      technology: ["React.js", "Node.js", "MongoDB", "Express.js", "Firebase", "Tailwind CSS"],
+      technology: [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Firebase",
+        "Tailwind CSS",
+      ],
       liveLink: "https://toyland-treasures.web.app/",
       clientCode: "https://github.com/Muhammad-Hamim/toyland-Treasures-client",
     },
-    
+
     {
       name: "The Dish Diary",
       photo: dishDiary,
@@ -44,9 +62,15 @@ const Portfolio = () => {
       features: [
         "Recipe search and filtering",
         "User favorites system",
-        "Interactive UI components"
+        "Interactive UI components",
       ],
-      technology: ["React.js", "JavaScript", "Tailwind CSS", "Firebase Auth", "REST API"],
+      technology: [
+        "React.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "Firebase Auth",
+        "REST API",
+      ],
       liveLink: "https://the-dish-diary-auth-3421e.web.app/",
       clientCode: "https://github.com/Muhammad-Hamim/the-dish-diary-client",
     },
@@ -56,36 +80,37 @@ const Portfolio = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const projectVariants = {
     hidden: {
       opacity: 0,
-      y: 30
+      y: 30,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
     <div id="portfolio" className="py-32 bg-gray-900 ">
-      <SectionHeader title="Featured Projects" subTitle="My Work" />
       
+      <SectionHeader title="Featured Projects" subTitle="My Work" />
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="container mx-auto px-4 mt-16"
+        className="container lg:max-w-7xl mx-auto px-4 mt-16"
       >
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
@@ -102,7 +127,7 @@ const Portfolio = () => {
                   initial={{ opacity: 0.6 }}
                   whileHover={{ opacity: 0.8 }}
                 />
-                
+
                 <motion.img
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
@@ -111,7 +136,7 @@ const Portfolio = () => {
                   alt={project.name}
                   className="w-full h-full object-cover"
                 />
-                
+
                 <AnimatePresence>
                   {hoveredProject === index && (
                     <motion.div
@@ -149,7 +174,9 @@ const Portfolio = () => {
               <div className="p-8">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      {project.name}
+                    </h3>
                     <p className="text-gray-400">{project.description}</p>
                   </div>
                   <motion.a
@@ -169,7 +196,9 @@ const Portfolio = () => {
                   </h4>
                   <ul className="text-gray-400 list-disc list-inside">
                     {project.features.map((feature, idx) => (
-                      <li key={idx} className="mb-1">{feature}</li>
+                      <li key={idx} className="mb-1">
+                        {feature}
+                      </li>
                     ))}
                   </ul>
                 </div>

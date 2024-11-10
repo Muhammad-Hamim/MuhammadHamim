@@ -23,11 +23,17 @@ const Hero = () => {
           transition={{ delay: i * 0.2 }}
         />
       ))}
-      <div className="container mx-auto px-4 py-20 relative z-10 ">
+      <div className="container lg:max-w-7xl mx-auto px-4 py-20 relative z-10 ">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full filter blur-3xl" />
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full filter blur-3xl" />
+        </div>
         <motion.div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <motion.h1 className="text-5xl lg:text-7xl font-bold mb-6">
-              Hi, I&apos;m <span className="text-[var(--accent)]">Muhammad Hamim</span>
+              Hi, I&apos;m{" "}
+              <span className="text-[var(--accent)]">Muhammad Hamim</span>
             </motion.h1>
             <TypeAnimation
               sequence={[
@@ -43,14 +49,20 @@ const Hero = () => {
             />
             <div className="mt-8 flex gap-4">
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 0 15px var(--accent)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px var(--accent)",
+                }}
                 className="px-6 py-3 bg-[var(--accent)] text-black font-bold rounded"
                 onClick={handleDownloadResume}
               >
                 <FaDownload className="inline mr-2" /> Download CV
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 0 15px var(--accent)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px var(--accent)",
+                }}
                 className="px-6 py-3 border border-[var(--accent)] text-[var(--accent)] font-bold rounded"
               >
                 <FaUserTie className="inline mr-2" /> Hire Me
@@ -59,7 +71,7 @@ const Hero = () => {
           </div>
           <motion.div className="relative">
             <div className="glass-card p-2">
-              <img 
+              <img
                 src={profile}
                 alt="Muhammad Hamim"
                 className="rounded w-full"
