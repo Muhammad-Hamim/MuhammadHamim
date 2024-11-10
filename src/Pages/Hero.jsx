@@ -23,7 +23,7 @@ const Hero = () => {
           transition={{ delay: i * 0.2 }}
         />
       ))}
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-20 relative z-10 ">
         <motion.div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <motion.h1 className="text-5xl lg:text-7xl font-bold mb-6">

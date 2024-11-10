@@ -77,7 +77,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div id="portfolio" className="py-32 bg-gray-900">
+    <div id="portfolio" className="py-32 bg-gray-900 ">
       <SectionHeader title="Featured Projects" subTitle="My Work" />
       
       <motion.div

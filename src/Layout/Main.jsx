@@ -1,19 +1,42 @@
-import { Outlet } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
-import { useContext } from "react";
-import { StateContext } from "../Components/Context";
+import Hero from "../Pages/Hero";
+import Features from "../Pages/Features";
+import Skills from "../Pages/Skills";
+import Portfolio from "../Pages/Portfolio";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
+import Footer from "../Shared/Footer/Footer";
 
 const Main = () => {
-  const { isOpen } = useContext(StateContext);
-
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       <Navbar />
-      <div className="flex-1 transition-all duration-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Outlet />
-        </div>
-      </div>
+      
+      <section id="hero" className="min-h-screen">
+        <Hero />
+      </section>
+      
+      <section id="features" className="min-h-screen">
+        <Features />
+      </section>
+      
+      <section id="skills" className="min-h-screen">
+        <Skills />
+      </section>
+      
+      <section id="portfolio" className="min-h-screen">
+        <Portfolio />
+      </section>
+      
+      <section id="about" className="min-h-screen">
+        <About />
+      </section>
+      
+      <section id="contact" className="min-h-screen">
+        <Contact />
+      </section>
+      
+      <Footer />
     </div>
   );
 };

@@ -93,7 +93,7 @@ const Skills = () => {
   };
 
   return (
-    <div id="skills" className="py-32 bg-gray-900">
+    <div id="skills" className="py-32 bg-gray-900 ">
       <SectionHeader title="Technical Skills" subTitle="Technologies I Work With" />
       
       <motion.div

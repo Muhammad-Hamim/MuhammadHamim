@@ -11,7 +11,15 @@
   --text-secondary: #b3b3b3;
   --circuit-color: #00ff00;
 }
+/* Add this to your global CSS file */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
 body {
   background-color: var(--primary);
   color: var(--text-primary);
