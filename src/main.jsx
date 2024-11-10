@@ -7,8 +7,10 @@ import Context from "./Components/Context";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Context>
-      <RouterProvider router={router}></RouterProvider>
-    </Context>
+    <div className="antialiased text-gray-800 selection:bg-indigo-500 selection:text-white">
+      <Context>
+        <RouterProvider router={router}></RouterProvider>
+      </Context>
+    </div>
   </React.StrictMode>
 );

@@ -1,182 +1,194 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import toyland from "../assets/toylandTreasures.jpeg";
 import dishDiary from "../assets/DishDiary.jpeg";
-import { GiCheckMark } from "react-icons/gi";
-import { motion } from "framer-motion";
 import SectionHeader from "../Components/SectionHeader";
+import { FaEye, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { BiChip } from "react-icons/bi";
 
 const Portfolio = () => {
+  const [hoveredProject, setHoveredProject] = useState(null);
+
   const projects = [
+    {
+      name: "Online Voting Application",
+      photo: toyland,
+      description: "A secure, transparent online voting platform",
+      features: [
+        "Real-time voting updates",
+        "Role-based access control",
+        "Comprehensive voting history and results"
+      ],
+      technology: ["React.js", "TypeScript", "Node.js", "MongoDB",'Mongoose', "Express.js", "JWT", "Tailwind CSS",'Shadcn UI'],
+      liveLink: "https://online-voting-app-client.vercel.app/",
+      clientCode: "https://github.com/Muhammad-Hamim/online-voting-app-client",
+    },
     {
       name: "Toyland Treasures",
       photo: toyland,
-      category: "A toy sell website",
+      description: "A toy sell website",
       features: [
-        "Exclusive Toy Marketplace",
-        "Secure User Authentication",
-        "Responsive Website Design",
-        "Seamless Inventory Management",
+        "User authentication and authorization",
+        "Dynamic product management",
+        "Responsive design across devices"
       ],
+      technology: ["React.js", "Node.js", "MongoDB", "Express.js", "Firebase", "Tailwind CSS"],
       liveLink: "https://toyland-treasures.web.app/",
       clientCode: "https://github.com/Muhammad-Hamim/toyland-Treasures-client",
-      serverCode: "https://github.com/Muhammad-Hamim/toyland-treasures-server",
-      technology: ["React js", "Node js", "MongoDB"],
     },
+    
     {
       name: "The Dish Diary",
       photo: dishDiary,
-      category: "A recipe hunter website",
+      description: "A recipe hunter website",
       features: [
-        "Inspiring Recipes: Discover mouthwatering dishes",
-        "User-friendly Design: Seamless browsing experience",
-        "Secure Authentication: Account safety assured",
-        "Interactive Guides: Step-by-step cooking instructions and tips",
+        "Recipe search and filtering",
+        "User favorites system",
+        "Interactive UI components"
       ],
+      technology: ["React.js", "JavaScript", "Tailwind CSS", "Firebase Auth", "REST API"],
       liveLink: "https://the-dish-diary-auth-3421e.web.app/",
       clientCode: "https://github.com/Muhammad-Hamim/the-dish-diary-client",
-      serverCode: "https://github.com/Muhammad-Hamim/the-dish-diary-server",
-      technology: ["React js", "JavaScript", "TailwindCSS"],
-    },
-    {
-      name: "Polyglot Pioneers Academy",
-      photo: toyland,
-      category: "A toy sell website",
-      features: [
-        "Exclusive Toy Marketplace",
-        "Secure User Authentication",
-        "Responsive Website Design",
-        "Seamless Inventory Management",
-      ],
-      liveLink: "https://toyland-treasures.web.app/",
-      clientCode: "https://github.com/Muhammad-Hamim/toyland-Treasures-client",
-      serverCode: "https://github.com/Muhammad-Hamim/toyland-treasures-server",
-      technology: ["React js", "Node js", "MongoDB"],
     },
   ];
-  const projectMotion = {
-    offscreen: {
-      x: "-500",
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
       transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1,
-      },
-    },
+        staggerChildren: 0.2
+      }
+    }
   };
-  const textAnimation = {
-    offscreen: {
-      transform: "scaleX(0)",
-      transformOrigin: "left",
+
+  const projectVariants = {
+    hidden: {
       opacity: 0,
+      y: 30
     },
-    onscreen: {
-      transform: "scaleX(1)",
+    visible: {
       opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1,
-      },
-    },
-  };
-  const textMotion = {
-    offscreen: {
-      y: 100,
-      opacity: 0,
-    },
-    onscreen: {
       y: 0,
-      opacity: 1,
       transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1,
-      },
-    },
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
   };
+
   return (
-    <div id="portfolio" className="py-28">
-      <SectionHeader
-        title="My Portfolio"
-        subTitle="VISIT MY PORTFOLIO AND PROVIDE YOUR FEEDBACK"
-      />
-      <div className="mt-10 mx-8 lg:mx-28">
-        {projects.map((project, index) => (
-          <motion.div
-            initial={"offscreen"}
-            whileInView={"onscreen"}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ staggerChildren: 0.5 }}
-            key={project.name}
-            className="flex flex-col lg:flex-row lg:items-center mb-10 lg:mb-0">
+    <div id="portfolio" className="py-32 bg-gray-900">
+      <SectionHeader title="Featured Projects" subTitle="My Work" />
+      
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="container mx-auto px-4 mt-16"
+      >
+        <div className="grid lg:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
             <motion.div
-              variants={projectMotion}
-              className={`w-full lg:w-1/2 h-[50vh] bg-top cursor-pointer ${
-                index % 2 === 0 ? "lg:order-1" : "lg:order-2"
-              }`}
-              style={{
-                backgroundImage: `url(${project.photo})`,
-                backgroundSize: "cover",
-              }}></motion.div>
-            <motion.div
-              variants={textAnimation}
-              className={`"w-full lg:w-1/2 bg-background hover:shadow-sm hover:shadow-magenta duration-500 shadow-sm shadow-slate-500 text-slate-300 p-5 ${
-                index % 2 === 0 ? "lg:order-2" : "lg:order-1"
-              }`}>
-              <motion.div variants={textMotion}>
-                <h2 className="text-3xl font-semibold">{project.name}</h2>
-                <p className="italic text-slate-500">{project.category}</p>
-              </motion.div>
-              <div className="flex items-center flex-wrap my-4 gap-4">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:bg-magenta duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
-                  Live link
-                </a>
-                <a
-                  href={project.clientCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
-                  Client code
-                </a>
-                <a
-                  href={project.serverCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:bg-magenta hover:bg-opacity-25 duration-300 px-4 border-2 border-magenta rounded-full text-slate-300 cursor-pointer">
-                  Server code
-                </a>
+              key={project.name}
+              variants={projectVariants}
+              onHoverStart={() => setHoveredProject(index)}
+              onHoverEnd={() => setHoveredProject(null)}
+              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50"
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 z-10"
+                  initial={{ opacity: 0.6 }}
+                  whileHover={{ opacity: 0.8 }}
+                />
+                
+                <motion.img
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                  src={project.photo}
+                  alt={project.name}
+                  className="w-full h-full object-cover"
+                />
+                
+                <AnimatePresence>
+                  {hoveredProject === index && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 flex items-center justify-center z-20"
+                    >
+                      <div className="flex gap-4">
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/20 transition-colors"
+                        >
+                          <FaEye className="text-white" />
+                          <span className="text-white">Live Demo</span>
+                        </a>
+                        <a
+                          href={project.clientCode}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/20 transition-colors"
+                        >
+                          <FaGithub className="text-white" />
+                          <span className="text-white">Source Code</span>
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-              <div className="my-4">
-                {project.features.map((feature) => (
-                  <p className="flex items-center gap-3 mb-2" key={feature}>
-                    <span className="text-magenta bg-magenta bg-opacity-20 p-2 rounded-full">
-                      <GiCheckMark />
+
+              <div className="p-8">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+                    <p className="text-gray-400">{project.description}</p>
+                  </div>
+                  <motion.a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -2 }}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    <FaExternalLinkAlt />
+                  </motion.a>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-gray-300 font-medium mb-2 flex items-center gap-2">
+                    <BiChip /> Key Features
+                  </h4>
+                  <ul className="text-gray-400 list-disc list-inside">
+                    {project.features.map((feature, idx) => (
+                      <li key={idx} className="mb-1">{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.technology.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-sm bg-gray-700/50 text-gray-300 rounded-full"
+                    >
+                      {tech}
                     </span>
-                    <span>{feature}</span>
-                  </p>
-                ))}
-              </div>
-              <div className="flex items-center flex-wrap gap-4">
-                {project.technology.map((item) => (
-                  <p
-                    key={item}
-                    className="bg-magenta bg-opacity-50 px-4 rounded-full text-slate-300 cursor-pointer">
-                    {item}
-                  </p>
-                ))}
+                  ))}
+                </div>
               </div>
             </motion.div>
-          </motion.div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,39 +1,26 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
       colors: {
-        magenta: "#ff014f",
-        background: "#212428",
-        // Replace with your custom color code
+        background: "#0F172A",
+        primary: "#1E293B",
+        accent: "#3B82F6",
+        magenta: "#FF014F",
+        textPrimary: "#F8FAFC",
+        textSecondary: "#94A3B8"
       },
-    },
-  },
-  daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#570df8",
-
-          secondary: "#f000b8",
-
-          accent: "#1dcdbc",
-
-          neutral: "#2b3440",
-
-          "base-100": "#ffffff",
-
-          info: "#3abff8",
-
-          success: "#36d399",
-
-          warning: "#fbbd23",
-
-          error: "#f87272",
-        },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
-    ],
+      boxShadow: {
+        'custom': '0 0 20px rgba(0, 0, 0, 0.1)',
+        'hover': '0 10px 30px rgba(59, 130, 246, 0.1)'
+      }
+    }
   },
-  plugins: [require("daisyui")],
-};
+  plugins: [
+    // require('@tailwindcss/forms')
+  ]
+}

@@ -1,7 +1,10 @@
-import { BsDashLg } from "react-icons/bs";
-import resume from "../assets/Muhammad-Hamim.pdf";
 import { motion } from "framer-motion";
+import resume from "../assets/Muhammad-Hamim.pdf";
 import SectionHeader from "../Components/SectionHeader";
+import profile from "../assets/profile.jpg";
+import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiCode } from "react-icons/hi";
+
 const About = () => {
   const handleDownloadResume = () => {
     const link = document.createElement("a");
@@ -10,73 +13,144 @@ const About = () => {
     link.click();
   };
 
-  const textMotion = {
-    offscreen: {
-      y: 100,
-      opacity: 0,
-    },
-    onscreen: {
-      y: 0,
-      opacity: 1,
+  const containerVariants = {
+    hidden: {},
+    visible: {
       transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1,
-      },
-    },
+        staggerChildren: 0.3
+      }
+    }
   };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const stats = [
+    { label: "Years Experience", value: "2+" },
+    { label: "Projects Completed", value: "15+" },
+    { label: "Technologies", value: "10+" },
+  ];
+
   return (
-    <div id="about" className="py-28">
-      <SectionHeader
-        title="About me"
-        subTitle="Unveiling My Journey and Passions"
-      />
-      <div className="mt-10 mx-8 lg:mx-28">
-        <motion.div
-          initial={"offscreen"}
-          whileInView={"onscreen"}
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ staggerChildren: 0.5 }}
-          className="grid lg:grid-cols-2 items-center justify-center gap-14">
-          <motion.div variants={textMotion}>
-            <img
-              className="aboutImg mx-auto"
-              src="https://i.ibb.co/ZBWt45G/rony.jpg"
-              alt=""
-            />
-            <div className="mt-4 text-center">
-              <motion.button
-                variants={textMotion}
-                onClick={handleDownloadResume}
-                className="relative px-6 py-3 font-bold text-slate-200 group">
-                <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-2 translate-y-2 bg-magenta rounded-sm group-hover:translate-x-0 group-hover:translate-y-0" />
-                <span className="absolute inset-0 w-full h-full border-4 border-slate-200 rounded-sm" />
-                <span className="relative">Download resume</span>
-              </motion.button>
+    <div id="about" className="py-32 bg-gray-900 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full filter blur-3xl" />
+      </div>
+
+      <SectionHeader title="About Me" subTitle="My Journey" />
+      
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="container mx-auto px-4 mt-16"
+      >
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Image Section */}
+          <motion.div variants={itemVariants} className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000" />
+            <div className="relative">
+              <div className="aspect-square overflow-hidden rounded-2xl border-2 border-gray-700/50 backdrop-blur-sm">
+                <motion.img
+                  src={profile}
+                  alt="Muhammad Hamim"
+                  className="w-full h-full object-cover"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </div>
+              
+              {/* Stats overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent p-6">
+                <div className="grid grid-cols-3 gap-4">
+                  {stats.map((stat, index) => (
+                    <div key={index} className="text-center">
+                      <div className="text-2xl font-bold text-white">{stat.value}</div>
+                      <div className="text-sm text-gray-400">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
-          <div className="text-slate-300 text-lg">
-            <motion.h1 variants={textMotion} className="text-3xl font-semibold">
-              Hi! I am Muhammad Hamim.
-            </motion.h1>
-            <motion.p variants={textMotion} className="text-justify">
-              <BsDashLg /> a passionate and versatile web developer with a
-              diverse skill set. My expertise spans across HTML, CSS, Tailwind,
-              Bootstrap, JavaScript, React, Node.js, Express.js, and MongoDB. I
-              thrive on turning creative ideas into practical, visually
-              appealing, and user-friendly websites. By combining design
-              aesthetics with technical prowess, I craft seamless and intuitive
-              user experiences. As a continuous learner, I stay updated with the
-              latest industry trends, ensuring my solutions adhere to best
-              practices. Whether it&apos;s building responsive front-end
-              interfaces or developing robust back-end functionalities, I am
-              committed to delivering high-quality results. Let&apos;s
-              collaborate and embark on a journey to bring your web projects to
-              life with innovation and excellence!
-            </motion.p>
-          </div>
-        </motion.div>
-      </div>
+
+          {/* Content Section */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+              <HiCode className="mr-2 text-purple-400" />
+              <span className="text-gray-300">Frontend Developer</span>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white">
+              Crafting Digital Experiences with Modern Web Technologies
+            </h2>
+
+            <div className="space-y-4 text-gray-300">
+              <p>
+                Hello! I&apos;m Muhammad Hamim, a passionate Frontend Developer specializing in building responsive and user-friendly web applications. With expertise in React, JavaScript, and modern CSS frameworks, I transform ideas into seamless digital experiences.
+              </p>
+              
+              <p>
+                My development philosophy centers on creating clean, maintainable code while ensuring optimal performance and user experience. I stay current with industry trends and best practices to deliver modern, scalable solutions.
+              </p>
+
+              <p>
+                Beyond coding, I&apos;m dedicated to continuous learning and collaboration. I thrive in environments where I can contribute to innovative projects and solve complex challenges through creative solutions.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4 mt-8">
+              <motion.button
+                onClick={handleDownloadResume}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg flex items-center gap-2 hover:from-purple-700 hover:to-pink-700 transition-all duration-300"
+              >
+                <FaDownload />
+                Download Resume
+              </motion.button>
+
+              <div className="flex gap-4">
+                <motion.a
+                  href="https://github.com/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all"
+                >
+                  <FaGithub size={24} />
+                </motion.a>
+                
+                <motion.a
+                  href="https://linkedin.com/in/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all"
+                >
+                  <FaLinkedin size={24} />
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 };

@@ -15,9 +15,10 @@
     "hamburger-react": "^2.5.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.12.0",
     "react-router-dom": "^6.14.0",
     "react-scroll": "^1.8.9",
     "react-type-animation": "^3.1.0",
@@ -26,6 +27,9 @@
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.9.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
