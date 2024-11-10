@@ -38,7 +38,7 @@ const About = () => {
   };
 
   const stats = [
-    { label: "Years Experience", value: "2+" },
+    { label: "Years Experience", value: "0+" },
     { label: "Projects Completed", value: "15+" },
     { label: "Technologies", value: "10+" },
   ];
@@ -115,12 +115,12 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-4 mt-8 relative z-10">
               <motion.button
                 onClick={handleDownloadResume}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg flex items-center gap-2 hover:from-purple-700 hover:to-pink-700 transition-all duration-300"
+                className="relative z-10 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg flex items-center gap-2 hover:from-purple-700 hover:to-pink-700 transition-all duration-300"
               >
                 <FaDownload />
                 Download Resume
