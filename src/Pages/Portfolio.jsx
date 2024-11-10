@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import toyland from "../assets/toylandTreasures.jpeg";
 import dishDiary from "../assets/DishDiary.jpeg";
-import SectionHeader from "../Components/SectionHeader";
+import onlineVotingApplication from "../assets/online-voting-application.png";import SectionHeader from "../Components/SectionHeader";
 import { FaEye, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { BiChip } from "react-icons/bi";
 
@@ -12,7 +12,7 @@ const Portfolio = () => {
   const projects = [
     {
       name: "Online Voting Application",
-      photo: toyland,
+      photo: onlineVotingApplication,
       description: "A secure, transparent online voting platform",
       features: [
         "Real-time voting updates",

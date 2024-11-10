@@ -128,7 +128,7 @@ const About = () => {
 
               <div className="flex gap-4">
                 <motion.a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Muhammad-Hamim"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -2 }}
@@ -138,7 +138,7 @@ const About = () => {
                 </motion.a>
                 
                 <motion.a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/muhammadhamim01/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -2 }}
